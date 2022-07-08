@@ -1,6 +1,6 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor.dhaka.cf-app.com/ykhadilkar/tanzu-dotnet-web-app-source')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='ykhadilkar/tanzu-dotnet-web-app-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='yatinkhadilkar-org')
+NAMESPACE = os.getenv("NAMESPACE", default='default')
 NAME = "tanzu-dotnet-web-app"
 RID = "ubuntu.18.04-x64"
 CONFIGURATION = "Release"
@@ -31,4 +31,4 @@ k8s_custom_deploy(
 k8s_resource(NAME, port_forwards=["8080:8080"],
             extra_pod_selectors=[{'serving.knative.dev/service': 'tanzu-dotnet-web-app'}])
 
-allow_k8s_contexts('dhaka-tap-m-pinniped')
+allow_k8s_contexts('tap-admin@tap')
