@@ -21,7 +21,7 @@ tanzu apps workload create tanzu-dotnet-web-app \
 --label tanzu.app.live.view=true \
 --label tanzu.app.live.view.application.flavours=steeltoe \
 --label tanzu.app.live.view.application.name=tanzu-dotnet-web-app \
--- label apps.tanzu.vmware.com/has-tests=true
+--label apps.tanzu.vmware.com/has-tests=true
 
 tanzu apps workload create tanzu-dotnet-web-app -f ./config/workload.yaml --yes
 ```
